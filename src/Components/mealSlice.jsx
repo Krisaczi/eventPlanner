@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-
 export const mealsSlice = createSlice({
   name: "meals",
   initialState: [
@@ -9,7 +8,7 @@ export const mealsSlice = createSlice({
     { name: "Dinner", cost: 70, selected: false },
   ],
   reducers: {
-    toogleMealSelection: (state, action) => {
+    toggleMealSelection: (state, action) => {
       state[action.payload].selected = !state[action.payload].selected;
     },
   },
