@@ -1,0 +1,18 @@
+.aboutus_main {
+  width: 800px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.aboutus_container {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: justify;
+}
+
+.aboutus_container p {
+  font-size: 23px;
+  font-weight: 700;
+}

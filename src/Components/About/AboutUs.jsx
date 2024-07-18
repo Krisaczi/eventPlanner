@@ -1,8 +1,9 @@
 import React from "react";
+import styles from "./AboutUs.module.scss";
 
 const AboutUs = () => {
   return (
-    <div className="aboutus_container">
+    <div className={styles.aboutus_container}>
       <p>
         Welcome to BudgetEase Solutions, your trusted partner in simplifying
         budget management and financial solutions. At BudgetEase, we understand

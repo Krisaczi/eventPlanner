@@ -52,7 +52,7 @@
   font-size: 30px;
   color: #333;
 }
-.quantity-value {
+.quantity_value {
   margin: 0 10px;
 }
 .main_container {
@@ -99,7 +99,7 @@
   color: #000;
 }
 
-.input-container {
+.input_container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -214,7 +214,7 @@
   cursor: pointer;
 }
 
-.input-container .input_box5 {
+.input_container .input_box5 {
   height: 40px;
   width: 200px;
   font-size: 20px;
@@ -287,10 +287,10 @@ navbar {
   color: #ff9900;
 }
 .button_container {
-  /* background-color: red; */
   width: 200px;
   display: flex;
   gap: 20px;
+  justify-content: center;
 }
 .details_button {
   padding: 8px 16px;
@@ -309,7 +309,7 @@ navbar {
   top: 1px;
   z-index: 99;
 }
-.btn-disabled {
+.btn_disabled {
   opacity: 0.5; /* Reduce opacity to visually indicate disabled state */
   cursor: not-allowed; /* Change cursor to indicate that the button is not clickable */
 }

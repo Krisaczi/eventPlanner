@@ -115,9 +115,9 @@ const ConferenceEvents = () => {
     console.log(items);
     return (
       <>
-        <div className="display_box1">
+        <div className={styles.display_box1}>
           {items.length === 0 && <p>No items selected</p>}
-          <table className="table_item_data">
+          <table className={styles.table_item_data}>
             <thead>
               <tr>
                 <th>Name</th>
@@ -191,7 +191,7 @@ const ConferenceEvents = () => {
               </div>
               <div className={styles.venue_selection}>
                 {venueItems.map((item, index) => (
-                  <div className="venue_main" key={index}>
+                  <div className={styles.venue_main} key={index}>
                     <div className={styles.img}>
                       <img
                         className={styles.pictures}
@@ -201,21 +201,21 @@ const ConferenceEvents = () => {
                     </div>
                     <div className="text">{item.name}</div>
                     <div>${item.cost}</div>
-                    <div className="button_container">
+                    <div className={styles.button_container}>
                       {venueItems[index].name ===
                       "Auditorium Hall (Capacity:200)" ? (
                         <>
                           <button
                             className={
                               venueItems[index].quantity === 0
-                                ? "styles.btn_warning btn-disabled"
-                                : "btn-minus btn-warning"
+                                ? styles.btn_success
+                                : styles.btn_warning
                             }
                             onClick={() => handleRemoveFromCart(index)}
                           >
                             &#8211;
                           </button>
-                          <span className="selected_count">
+                          <span className={styles.selected_count}>
                             {venueItems[index].quantity > 0
                               ? ` ${venueItems[index].quantity}`
                               : "0"}
@@ -223,8 +223,8 @@ const ConferenceEvents = () => {
                           <button
                             className={
                               remainingAuditoriumQuantity === 0
-                                ? "btn-success btn-disabled"
-                                : "btn-success btn-plus"
+                                ? styles.btn_success
+                                : styles.btn_warning
                             }
                             onClick={() => handleAddToCart(index)}
                           >
@@ -232,12 +232,12 @@ const ConferenceEvents = () => {
                           </button>
                         </>
                       ) : (
-                        <div className="button_container">
+                        <div className={styles.button_container}>
                           <button
                             className={
                               venueItems[index].quantity === 0
-                                ? " btn-warning btn-disabled"
-                                : "btn-warning btn-plus"
+                                ? styles.btn_success
+                                : styles.btn_warning
                             }
                             onClick={() => handleRemoveFromCart(index)}
                           >
@@ -251,8 +251,8 @@ const ConferenceEvents = () => {
                           <button
                             className={
                               venueItems[index].quantity === 10
-                                ? " btn-success btn-disabled"
-                                : "btn-success btn-plus"
+                                ? styles.btn_success
+                                : styles.btn_warning
                             }
                             onClick={() => handleAddToCart(index)}
                           >
@@ -288,15 +288,17 @@ const ConferenceEvents = () => {
                     <div> ${item.cost} </div>
                     <div className={styles.addons_btn}>
                       <button
-                        className={styles.btn_warning}
+                        className={styles.btn_success}
                         onClick={() => handleDecrementAvQuantity(index)}
                       >
                         {" "}
                         &ndash;{" "}
                       </button>
-                      <span className="quantity-value">{item.quantity}</span>
+                      <span className={styles.quantity_value}>
+                        {item.quantity}
+                      </span>
                       <button
-                        className={styles.btn_success}
+                        className={styles.btn_warning}
                         onClick={() => handleIncrementAvQuantity(index)}
                       >
                         {" "}
@@ -318,13 +320,13 @@ const ConferenceEvents = () => {
                 <h1>Meals Selection</h1>
               </div>
 
-              <div className="input-container venue_selection">
+              <div className={styles.input_container}>
                 <label htmlFor="numberOfPeople">
                   <h3>Number of People:</h3>
                 </label>
                 <input
                   type="number"
-                  className="input_box5"
+                  className={styles.input_box5}
                   id="numberOfPeople"
                   value={numberOfPeople}
                   onChange={(e) => setNumberOfPeople(parseInt(e.target.value))}
@@ -334,7 +336,7 @@ const ConferenceEvents = () => {
               <div className={styles.meal_selection}>
                 {mealsItems.map((item, index) => (
                   <div
-                    className="meal_item"
+                    className={styles.meal_item}
                     key={index}
                     style={{ padding: 15 }}
                   >
@@ -347,7 +349,7 @@ const ConferenceEvents = () => {
                       />
                       <label htmlFor={`meal_${index}`}> {item.name} </label>
                     </div>
-                    <div className="meal_cost">${item.cost}</div>
+                    <div className={styles.meal_cost}>${item.cost}</div>
                   </div>
                 ))}
               </div>
@@ -357,7 +359,7 @@ const ConferenceEvents = () => {
             </div>
           </div>
         ) : (
-          <div className="total_amount_detail">
+          <div className={styles.total_amount_detail}>
             <TotalCosts
               totalCosts={totalCosts}
               handleClick={handleToggleItems}
