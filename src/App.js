@@ -25,7 +25,7 @@ function App() {
                 onClick={() => handleGetStarted()}
                 className="get-started-btn"
               >
-                Get Started
+                Book your conference
               </button>
             </div>
           </div>
