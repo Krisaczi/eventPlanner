@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import styles from "./TotalCosts.module.scss";
 const TotalCosts = ({ totalCosts, ItemsDisplay }) => {
   const total_amount = totalCosts.venue + totalCosts.av + totalCosts.meals;
